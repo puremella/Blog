@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   # resources :comments
 
+  root 'static_pages#home'
+  get  'static_pages/help'
+  get  'static_pages/about'
+  
   resources :posts do
     resources :comments, only: [:create]
   end
@@ -59,5 +63,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root 'static_pages#home'
 end
